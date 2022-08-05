@@ -13,3 +13,12 @@ FROM mcr.microsoft.com/vscode/devcontainers/javascript-node:0-${VARIANT}
 # [Optional] Uncomment if you want to install more global node modules
 # RUN su node -c "npm install -g <your-package-list-here>"
 RUN su node -c "npm install -g serve"
+
+# Persist bash history for a non-root user
+# https://code.visualstudio.com/remote/advancedcontainers/persist-bash-history
+ARG USERNAME=node
+RUN SNIPPET="export PROMPT_COMMAND='history -a' && export HISTFILE=/commandhistory/.bash_history" \
+    && mkdir /commandhistory \
+    && touch /commandhistory/.bash_history \
+    && chown -R $USERNAME /commandhistory \
+    && echo $SNIPPET >> "/home/$USERNAME/.bashrc"
