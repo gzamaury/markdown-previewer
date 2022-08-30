@@ -1,28 +1,17 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import { marked } from "marked";
+import "./MDInput.css";
 import RenderIn from "../RenderIn/RenderIn";
 
 function MDInput({ outputElementId, textInput }) {
   const [insecureHtml, setInsecureHtml] = useState(marked.parse(textInput));
   return (
-    <div
-      style={{
-        height: "50vh",
-        width: "100vw",
-      }}
-    >
+    <div id="mdi-component">
       <textarea
         id="editor"
         name="editor"
         data-testid="editor"
-        style={{
-          resize: "none",
-          border: "0",
-          padding: "0",
-          height: "100%",
-          width: "100%",
-        }}
         autoComplete="off"
         autoCorrect="off"
         onChange={(e) => setInsecureHtml(marked.parse(e.target.value))}

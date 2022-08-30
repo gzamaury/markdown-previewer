@@ -1,18 +1,13 @@
 import MDInput from "../MDInput/MDInput";
+import "./MDPreviewer.css";
 
 function MDPreviewer() {
   return (
-    <div>
+    <div id="mdp-component">
       <div id="md-in-container">
         <MDInput outputElementId="md-out-container" />
       </div>
-      <div
-        id="md-out-container"
-        style={{
-          height: "50vh",
-          overflow: "auto",
-        }}
-      />
+      <div id="md-out-container" />
     </div>
   );
 }

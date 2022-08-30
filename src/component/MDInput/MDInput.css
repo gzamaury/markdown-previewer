@@ -1,0 +1,15 @@
+#mdi-component {
+  height: 50vh;
+  width: 100vw;
+}
+
+#editor {
+  resize: none;
+  border: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+#preview {
+}

@@ -1,0 +1,10 @@
+#mdp-component {
+}
+
+#md-in-container {
+}
+
+#md-out-container {
+  height: 50vh;
+  overflow: auto;
+}
