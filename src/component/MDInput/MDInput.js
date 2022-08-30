@@ -15,6 +15,7 @@ function MDInput({ outputElementId, textInput }) {
       <textarea
         id="editor"
         name="editor"
+        data-testid="editor"
         style={{
           resize: "none",
           border: "0",
@@ -30,7 +31,11 @@ function MDInput({ outputElementId, textInput }) {
       </textarea>
 
       <RenderIn elementId={outputElementId}>
-        <div id="preview" dangerouslySetInnerHTML={{ __html: insecureHtml }} />
+        <div
+          id="preview"
+          data-testid="preview"
+          dangerouslySetInnerHTML={{ __html: insecureHtml }}
+        />
       </RenderIn>
     </div>
   );
