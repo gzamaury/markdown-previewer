@@ -1,10 +1,24 @@
 #mdp-component {
+  --border-color: red;
+  display: flex;
+  height: 98vh;
+  width: 98vw;
+  border-top: solid var(--border-color) 1vh;
+  border-bottom: solid var(--border-color) 1vh;
+  border-right: solid var(--border-color) 1vw;
+  border-left: solid var(--border-color) 1vw;
 }
 
-#md-in-container {
+.container {
+  height: 98vh;
+  width: 48.5vw;
 }
 
-#md-out-container {
-  height: 50vh;
+#md-input {
+  border-right: solid var(--border-color) 0.5vw;
+}
+
+#md-preview {
+  border-left: solid var(--border-color) 0.5vw;
   overflow: auto;
 }

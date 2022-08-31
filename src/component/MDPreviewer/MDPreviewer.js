@@ -4,10 +4,10 @@ import "./MDPreviewer.css";
 function MDPreviewer() {
   return (
     <div id="mdp-component">
-      <div id="md-in-container">
-        <MDInput outputElementId="md-out-container" />
+      <div id="md-input" className="container">
+        <MDInput outputElementId="md-preview" />
       </div>
-      <div id="md-out-container" />
+      <div id="md-preview" className="container" />
     </div>
   );
 }

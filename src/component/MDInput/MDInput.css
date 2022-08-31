@@ -1,6 +1,6 @@
 #mdi-component {
-  height: 50vh;
-  width: 100vw;
+  height: inherit;
+  width: inherit;
 }
 
 #editor {
