@@ -2,6 +2,11 @@
   --border-color: red;
   --border-size: 1vmin;
   --highlight-color: lightblue;
+  --font-size: calc(12px + 0.8vmax);
+}
+
+body {
+  font-size: var(--font-size);
 }
 
 #mdp-component,
@@ -31,6 +36,17 @@
 #md-preview {
   border-left: solid var(--border-color) calc(var(--border-size) / 2);
   overflow: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-block-start: 0.4em;
+  margin-block-end: 0.2em;
+  border-bottom: 1px solid var(--border-color);
 }
 
 @media only screen and (orientation: portrait) {
