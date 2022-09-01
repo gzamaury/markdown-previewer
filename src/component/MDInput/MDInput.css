@@ -1,6 +1,6 @@
 #mdi-component {
-  height: inherit;
-  width: inherit;
+  height: 100%;
+  width: 100%;
 }
 
 #editor {
@@ -9,6 +9,7 @@
   padding: 0;
   height: 100%;
   width: 100%;
+  outline-color: var(--highlight-color);
 }
 
 #preview {
