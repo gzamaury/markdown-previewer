@@ -38,6 +38,15 @@
     -->
     <% if (process.env.NODE_ENV === 'development') { %>
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <script>
+      const fcc_wrapper = document.getElementById("fcc_test_suite_wrapper");
+      let style = document.createElement("style");
+      style.textContent = `
+        #fcc_foldout_toggler {
+          opacity: 0.1;
+        }`;
+      fcc_wrapper.shadowRoot.appendChild(style);
+    </script>
     <% } %>
   </body>
 </html>

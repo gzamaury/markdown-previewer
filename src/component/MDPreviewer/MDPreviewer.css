@@ -1,0 +1,49 @@
+:root {
+  --border-color: red;
+  --border-size: 1vmin;
+  --highlight-color: lightblue;
+}
+
+#mdp-component,
+#mdp-component * {
+  box-sizing: border-box;
+}
+
+#mdp-component {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  border-top: solid var(--border-color) var(--border-size);
+  border-bottom: solid var(--border-color) var(--border-size);
+  width: 100vw;
+  border-right: solid var(--border-color) var(--border-size);
+  border-left: solid var(--border-color) var(--border-size);
+}
+
+.container {
+  flex: 1 1 50%;
+}
+
+#md-input {
+  border-right: solid var(--border-color) calc(var(--border-size) / 2);
+}
+
+#md-preview {
+  border-left: solid var(--border-color) calc(var(--border-size) / 2);
+  overflow: auto;
+}
+
+@media only screen and (orientation: portrait) {
+  #md-input {
+    border-right: solid var(--border-color) 0;
+    border-bottom: solid var(--border-color) calc(var(--border-size) / 2);
+  }
+
+  #md-preview {
+    border-left: solid var(--border-color) 0;
+    border-top: solid var(--border-color) calc(var(--border-size) / 2);
+  }
+  #mdp-component {
+    flex-direction: column;
+  }
+}
