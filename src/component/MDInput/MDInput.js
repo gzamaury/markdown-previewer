@@ -4,6 +4,8 @@ import { marked } from "marked";
 import "./MDInput.css";
 import RenderIn from "../RenderIn/RenderIn";
 
+marked.setOptions({ headerIds: false, gfm: true, breaks: true });
+
 function MDInput({ outputElementId, textInput }) {
   const [insecureHtml, setInsecureHtml] = useState(marked.parse(textInput));
   return (
@@ -14,6 +16,7 @@ function MDInput({ outputElementId, textInput }) {
         data-testid="editor"
         autoComplete="off"
         autoCorrect="off"
+        wrap="soft"
         onChange={(e) => setInsecureHtml(marked.parse(e.target.value))}
       >
         {textInput}
