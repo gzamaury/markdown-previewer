@@ -58,6 +58,11 @@ Bold and nested italic | ** ** and _ _ | **This text is _extremely_ important**
 All bold and italic | *** *** | ***All this text is important***
 Subscript | \`\`\`<sub> </sub>\`\`\` | <sub>This is a subscript text</sub>
 Superscript | \`\`\`<sup> </sup>\`\`\` | <sup>This is a superscript text</sup>
+
+## Quoting text
+Text that is not a quote
+> Text that is a quote
+
 `;
 
 MDInput.defaultProps = {

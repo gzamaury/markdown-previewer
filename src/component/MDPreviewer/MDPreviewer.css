@@ -52,7 +52,7 @@ h6 {
 
 table {
   --border-ext: solid currentColor 2px;
-  margin: 1.5vmin 1vmin;
+  margin: 1.5vmin 0vmin;
   border-collapse: collapse;
 }
 
@@ -78,6 +78,19 @@ table tr th:first-child {
 table tr td:last-child,
 table tr th:last-child {
   border-right: var(--border-ext);
+}
+
+blockquote {
+  margin: 1em;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+}
+
+blockquote p::before {
+  content: url(./quote.svg);
+  display: inline-block;
+  padding: 1vmin;
+  width: 3.5vmin;
 }
 
 @media only screen and (orientation: portrait) {
