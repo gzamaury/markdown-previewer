@@ -48,6 +48,16 @@ const textDefaultInput = `# Markdown Basic
 - ##### Heading level 5
 - ###### Heading level 6
 
+## Styling text
+Style | Syntax | Example
+----- | ------ | -------
+Bold  | ** ** or __ __ | **This is bold text**
+Italic | * * or _ _ | *This text is italicized*
+Strikethrough | ~~ ~~ | ~~This was mistaken text~~
+Bold and nested italic | ** ** and _ _ | **This text is _extremely_ important**
+All bold and italic | *** *** | ***All this text is important***
+Subscript | \`\`\`<sub> </sub>\`\`\` | <sub>This is a subscript text</sub>
+Superscript | \`\`\`<sup> </sup>\`\`\` | <sup>This is a superscript text</sup>
 `;
 
 MDInput.defaultProps = {

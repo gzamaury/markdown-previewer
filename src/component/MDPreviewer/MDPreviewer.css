@@ -3,6 +3,7 @@
   --border-size: 1vmin;
   --highlight-color: lightblue;
   --font-size: calc(12px + 0.8vmax);
+  --border-stye: 1px solid var(--border-color);
 }
 
 body {
@@ -46,7 +47,37 @@ h5,
 h6 {
   margin-block-start: 0.4em;
   margin-block-end: 0.2em;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: solid var(--border-color) 1px;
+}
+
+table {
+  --border-ext: solid currentColor 2px;
+  margin: 1.5vmin 1vmin;
+  border-collapse: collapse;
+}
+
+table td,
+table th {
+  border: var(--border-stye);
+  padding: 1.5vmin;
+}
+
+table tr:first-child th {
+  border-top: var(--border-ext);
+}
+
+table tr:last-child td {
+  border-bottom: var(--border-ext);
+}
+
+table tr td:first-child,
+table tr th:first-child {
+  border-left: var(--border-ext);
+}
+
+table tr td:last-child,
+table tr th:last-child {
+  border-right: var(--border-ext);
 }
 
 @media only screen and (orientation: portrait) {
