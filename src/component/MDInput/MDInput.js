@@ -1,10 +1,23 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import { marked } from "marked";
+import hljs from "highlight.js";
+import "highlight.js/styles/github.css";
 import "./MDInput.css";
 import RenderIn from "../RenderIn/RenderIn";
 
-marked.setOptions({ headerIds: false, gfm: true, breaks: true });
+const markedOptions = {
+  highlight: (code, lang) => {
+    const language = hljs.getLanguage(lang) ? lang : "plaintext";
+    return hljs.highlight(code, { language }).value;
+  },
+  langPrefix: "hljs language-", // highlight.js css expects a top-level 'hljs' class.
+  headerIds: false,
+  gfm: true,
+  breaks: true,
+};
+
+marked.setOptions(markedOptions);
 
 function MDInput({ outputElementId, textInput }) {
   const [insecureHtml, setInsecureHtml] = useState(marked.parse(textInput));
@@ -17,10 +30,9 @@ function MDInput({ outputElementId, textInput }) {
         autoComplete="off"
         autoCorrect="off"
         wrap="soft"
+        defaultValue={textInput}
         onChange={(e) => setInsecureHtml(marked.parse(e.target.value))}
-      >
-        {textInput}
-      </textarea>
+      />
 
       <RenderIn elementId={outputElementId}>
         <div
@@ -38,49 +50,49 @@ MDInput.propTypes = {
   textInput: PropTypes.string,
 };
 
-const textDefaultInput = `# Welcome to my React Markdown Previewer!
+const textDefaultInput = `# Markdown Basic
+## Writing and formatting syntax
+### Headings:
+- # Heading level 1
+- ## Heading level 2
+- ### Heading level 3
+- #### Heading level 4
+- ##### Heading level 5
+- ###### Heading level 6
 
-## This is a sub-heading...
-### And here's some other cool stuff:
+## Styling text
+Style | Syntax | Example
+----- | ------ | -------
+Bold  | ** ** or __ __ | **This is bold text**
+Italic | * * or _ _ | *This text is italicized*
+Strikethrough | ~~ ~~ | ~~This was mistaken text~~
+Bold and nested italic | ** ** and _ _ | **This text is _extremely_ important**
+All bold and italic | *** *** | ***All this text is important***
+Subscript | \`<sub> </sub>\` | <sub>This is a subscript text</sub>
+Superscript | \`<sup> </sup>\` | <sup>This is a superscript text</sup>
 
-Here's some code, \`<div></div>\`, between 2 backticks.
+## Quoting text
+Text that is not a quote
+> Text that is a quote
 
+## Quoting code
+You can call out code or a command within a sentence with single backticks (\\\`), e.g. the \`console.log()\` method outputs a message to the web console.
+
+To format code or text into its own distinct block, use triple backticks (\`\`\`).
+
+\`\`\`js
+// JS - destructuring assignment
+let a, b;
+[a, b] = [10, 20];
+
+console.log(a);
+// expected output: 10
+
+console.log(b);
+// expected output: 20
 \`\`\`
-// this is multi-line code:
 
-function anotherExample(firstLine, lastLine) {
-  if (firstLine == '\`\`\`' && lastLine == '\`\`\`') {
-    return multiLineCode;
-  }
-}
-\`\`\`
-
-You can also make text **bold**... whoa!
-Or _italic_.
-Or... wait for it... **_both!_**
-And feel free to go crazy ~~crossing stuff out~~.
-
-There are also [links](https://www.freecodecamp.org), and
-> Block Quotes!
-
-And if you want to get really crazy, even tables:
-
-Wild Header | Crazy Header | Another Header?
------------- | ------------- | -------------
-Your content can | be here, and it | can be here...
-And here. | Okay. | I think we get it.
-
-- And of course, there are lists.
-  - Some are bulleted.
-     - With different indentation levels.
-        - That look like this.
-
-
-1. And there are numbered lists too.
-1. Use just 1s if you want!
-1. And last but not least, let's not forget embedded images:
-
-![freeCodeCamp Logo](https://cdn.freecodecamp.org/testable-projects-fcc/images/fcc_secondary.svg)`;
+`;
 
 MDInput.defaultProps = {
   textInput: textDefaultInput,
