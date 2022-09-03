@@ -1,10 +1,23 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import { marked } from "marked";
+import hljs from "highlight.js";
+import "highlight.js/styles/github.css";
 import "./MDInput.css";
 import RenderIn from "../RenderIn/RenderIn";
 
-marked.setOptions({ headerIds: false, gfm: true, breaks: true });
+const markedOptions = {
+  highlight: (code, lang) => {
+    const language = hljs.getLanguage(lang) ? lang : "plaintext";
+    return hljs.highlight(code, { language }).value;
+  },
+  langPrefix: "hljs language-", // highlight.js css expects a top-level 'hljs' class.
+  headerIds: false,
+  gfm: true,
+  breaks: true,
+};
+
+marked.setOptions(markedOptions);
 
 function MDInput({ outputElementId, textInput }) {
   const [insecureHtml, setInsecureHtml] = useState(marked.parse(textInput));
@@ -17,10 +30,9 @@ function MDInput({ outputElementId, textInput }) {
         autoComplete="off"
         autoCorrect="off"
         wrap="soft"
+        defaultValue={textInput}
         onChange={(e) => setInsecureHtml(marked.parse(e.target.value))}
-      >
-        {textInput}
-      </textarea>
+      />
 
       <RenderIn elementId={outputElementId}>
         <div
@@ -56,12 +68,29 @@ Italic | * * or _ _ | *This text is italicized*
 Strikethrough | ~~ ~~ | ~~This was mistaken text~~
 Bold and nested italic | ** ** and _ _ | **This text is _extremely_ important**
 All bold and italic | *** *** | ***All this text is important***
-Subscript | \`\`\`<sub> </sub>\`\`\` | <sub>This is a subscript text</sub>
-Superscript | \`\`\`<sup> </sup>\`\`\` | <sup>This is a superscript text</sup>
+Subscript | \`<sub> </sub>\` | <sub>This is a subscript text</sub>
+Superscript | \`<sup> </sup>\` | <sup>This is a superscript text</sup>
 
 ## Quoting text
 Text that is not a quote
 > Text that is a quote
+
+## Quoting code
+You can call out code or a command within a sentence with single backticks (\\\`), e.g. the \`console.log()\` method outputs a message to the web console.
+
+To format code or text into its own distinct block, use triple backticks (\`\`\`).
+
+\`\`\`js
+// JS - destructuring assignment
+let a, b;
+[a, b] = [10, 20];
+
+console.log(a);
+// expected output: 10
+
+console.log(b);
+// expected output: 20
+\`\`\`
 
 `;
 

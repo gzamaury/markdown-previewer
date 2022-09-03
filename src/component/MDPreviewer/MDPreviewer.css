@@ -4,6 +4,7 @@
   --highlight-color: lightblue;
   --font-size: calc(12px + 0.8vmax);
   --border-stye: 1px solid var(--border-color);
+  --background--color: ghostwhite;
 }
 
 body {
@@ -86,11 +87,29 @@ blockquote {
   font-weight: bold;
 }
 
+blockquote p {
+  margin: 0;
+  padding: 1vmin 2vmin 1vmin 3vmin;
+  display: inline-block;
+  background: var(--background--color);
+}
+
 blockquote p::before {
   content: url(./quote.svg);
   display: inline-block;
-  padding: 1vmin;
+  padding: 0vmin 1vmin 0vmin 0vmin;
   width: 3.5vmin;
+  margin-left: -1vmin;
+}
+
+code {
+  background: var(--background--color);
+  padding: 0.5vmin;
+}
+
+pre code.hljs {
+  padding: 1vmin 2vmin 1vmin 2vmin;
+  background: var(--background--color);
 }
 
 @media only screen and (orientation: portrait) {
