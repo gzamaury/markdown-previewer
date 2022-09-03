@@ -92,6 +92,17 @@ console.log(b);
 // expected output: 20
 \`\`\`
 
+## Links
+You can create an inline link by wrapping link text in brackets \`[ ]\`, and then wrapping the URL in parentheses \`( )\`.
+
+These examples are based on [Basic writing and formatting syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+
+## Images
+You can display an image by adding \`!\` and wrapping the alt text in \`[ ]\`. Then wrap the link for the image in parentheses \`()\`.
+
+![This is an image](https://myoctocat.com/assets/images/base-octocat.svg)
+![freeCodeCamp Logo](https://cdn.freecodecamp.org/testable-projects-fcc/images/fcc_secondary.svg)
+
 `;
 
 MDInput.defaultProps = {

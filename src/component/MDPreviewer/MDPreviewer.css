@@ -112,6 +112,16 @@ pre code.hljs {
   background: var(--background--color);
 }
 
+a {
+  color: var(--border-color);
+}
+
+p img {
+  max-width: 100%;
+  display: block;
+  margin: auto;
+}
+
 @media only screen and (orientation: portrait) {
   #md-input {
     border-right: solid var(--border-color) 0;
