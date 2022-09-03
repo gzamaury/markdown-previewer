@@ -63,11 +63,11 @@ const textDefaultInput = `# Markdown Basic
 ## Styling text
 Style | Syntax | Example
 ----- | ------ | -------
-Bold  | ** ** or __ __ | **This is bold text**
-Italic | * * or _ _ | *This text is italicized*
-Strikethrough | ~~ ~~ | ~~This was mistaken text~~
-Bold and nested italic | ** ** and _ _ | **This text is _extremely_ important**
-All bold and italic | *** *** | ***All this text is important***
+Bold  | \`** **\` or \`__ __\` | **This is bold text**
+Italic | \`* *\` or \`_ _\` | *This text is italicized*
+Strikethrough | \`~~ ~~\` | ~~This was mistaken text~~
+Bold and nested italic | \`** **\` and \`_ _\` | **This text is _extremely_ important**
+All bold and italic | \`*** ***\` | ***All this text is important***
 Subscript | \`<sub> </sub>\` | <sub>This is a subscript text</sub>
 Superscript | \`<sup> </sup>\` | <sup>This is a superscript text</sup>
 
@@ -76,9 +76,9 @@ Text that is not a quote
 > Text that is a quote
 
 ## Quoting code
-You can call out code or a command within a sentence with single backticks (\\\`), e.g. the \`console.log()\` method outputs a message to the web console.
+You can call out code or a command within a sentence with single backticks (\`\`\`\` \` \`\`\`\`), e.g. the \`console.log()\` method outputs a message to the web console.
 
-To format code or text into its own distinct block, use triple backticks (\`\`\`).
+To format code or text into its own distinct block, use triple backticks (\`\`\`\` \`\`\` \`\`\`\`).
 
 \`\`\`js
 // JS - destructuring assignment
