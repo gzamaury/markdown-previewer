@@ -103,6 +103,34 @@ You can display an image by adding \`!\` and wrapping the alt text in \`[ ]\`. T
 ![This is an image](https://myoctocat.com/assets/images/base-octocat.svg)
 ![freeCodeCamp Logo](https://cdn.freecodecamp.org/testable-projects-fcc/images/fcc_secondary.svg)
 
+## Lists
+You can make an unordered list by preceding one or more lines of text with \`-\` or \`*\`.
+
+- George Washington
+- John Adams
+- Thomas Jefferson
+
+To order your list, precede each line with a number.
+
+1. James Madison
+2. James Monroe
+3. John Quincy Adams
+
+## Nested Lists
+You can create a nested list by indenting one or more list items below another item.
+
+1. First list item
+   - First nested list item
+     - Second nested list item
+
+## Task lists
+
+To create a task list, preface list items with a hyphen and space followed by \`[ ]\`. To mark a task as complete, use \`[x]\`.
+
+- [x] Task checked
+- [ ] Pending task
+- [ ] Another pending task
+
 `;
 
 MDInput.defaultProps = {

@@ -122,6 +122,17 @@ p img {
   margin: auto;
 }
 
+ul li::marker {
+  color: var(--border-color);
+}
+
+input[type="checkbox"] {
+  vertical-align: text-top;
+  margin: 0.5vmin;
+  width: var(--font-size);
+  height: var(--font-size);
+}
+
 @media only screen and (orientation: portrait) {
   #md-input {
     border-right: solid var(--border-color) 0;
