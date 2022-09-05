@@ -35,6 +35,10 @@ body {
   border-right: solid var(--border-color) calc(var(--border-size) / 2);
 }
 
+#md-input #editor {
+  font-size: calc(10px + 0.6vmax);
+}
+
 #md-preview {
   border-left: solid var(--border-color) calc(var(--border-size) / 2);
   overflow: auto;
@@ -53,7 +57,7 @@ h6 {
 
 table {
   --border-ext: solid currentColor 2px;
-  margin: 1.5vmin 0vmin;
+  margin: 1.5vmin auto;
   border-collapse: collapse;
 }
 
