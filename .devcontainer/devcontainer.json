@@ -16,23 +16,23 @@
     "vscode": {
       // Add the IDs of extensions you want installed when the container is created.
       "extensions": [
-		"dbaeumer.vscode-eslint",
-		"formulahendry.auto-complete-tag",
-		"mgmcdermott.vscode-language-babel",
-		"streetsidesoftware.code-spell-checker",
-		"ritwickdey.create-file-folder",
-		"pranaygp.vscode-css-peek",
-		"rohit-gohri.format-code-action",
-		"wix.glean",
-		"riazxrazor.html-to-jsx",
-		"Zignd.html-css-class-completion",
-		"esbenp.prettier-vscode",
-		"planbcoding.vscode-react-refactor",
-		"formulahendry.auto-close-tag",
-		"formulahendry.auto-rename-tag",
-		"dsznajder.es7-react-js-snippets",
-		"SimonSiefke.prettier-vscode"
-	]
+        "dbaeumer.vscode-eslint",
+        "formulahendry.auto-complete-tag",
+        "mgmcdermott.vscode-language-babel",
+        "streetsidesoftware.code-spell-checker",
+        "ritwickdey.create-file-folder",
+        "pranaygp.vscode-css-peek",
+        "rohit-gohri.format-code-action",
+        "wix.glean",
+        "riazxrazor.html-to-jsx",
+        "Zignd.html-css-class-completion",
+        "esbenp.prettier-vscode",
+        "planbcoding.vscode-react-refactor",
+        "formulahendry.auto-close-tag",
+        "formulahendry.auto-rename-tag",
+        "dsznajder.es7-react-js-snippets",
+        "SimonSiefke.prettier-vscode"
+      ]
     }
   },
 
@@ -42,7 +42,7 @@
   // Publishing a port
   // https://code.visualstudio.com/docs/remote/containers#_publishing-a-port
   // Unlike forwardPorts, these listen on all interfaces (0.0.0.0) not just localhost for it to be available externally
-  // "appPort": ["3000:3000"],
+  "appPort": ["3000:3000"],
 
   // Use 'postCreateCommand' to run commands after the container is created.
   // "postCreateCommand": "npm i",
