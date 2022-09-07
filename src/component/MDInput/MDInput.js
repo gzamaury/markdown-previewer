@@ -5,6 +5,7 @@ import hljs from "highlight.js";
 import "highlight.js/styles/github.css";
 import "./MDInput.css";
 import RenderIn from "../RenderIn/RenderIn";
+import onkeydown from "./tabSupport";
 
 const markedOptions = {
   highlight: (code, lang) => {
@@ -32,6 +33,7 @@ function MDInput({ outputElementId, textInput }) {
         wrap="soft"
         defaultValue={textInput}
         onChange={(e) => setInsecureHtml(marked.parse(e.target.value))}
+        onKeyDown={(e) => onkeydown(e, "  ")}
       />
 
       <RenderIn elementId={outputElementId}>
