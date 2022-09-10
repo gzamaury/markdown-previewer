@@ -33,7 +33,7 @@ function MDInput({ outputElementId, textInput }) {
         wrap="soft"
         defaultValue={textInput}
         onChange={(e) => setInsecureHtml(marked.parse(e.target.value))}
-        onKeyDown={(e) => onkeydown(e, "  ")}
+        onKeyDown={onkeydown}
       />
 
       <RenderIn elementId={outputElementId}>
