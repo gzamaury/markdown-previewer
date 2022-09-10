@@ -126,6 +126,20 @@ p img {
   margin: auto;
 }
 
+ol,
+ul {
+  padding-left: 0;
+  margin-left: 6vmin;
+}
+
+ol ol,
+ol ul,
+ul ul,
+ul ol {
+  padding-left: 0;
+  margin-left: 4vmin;
+}
+
 ul li::marker {
   color: var(--border-color);
 }

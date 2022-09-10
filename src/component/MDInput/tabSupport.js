@@ -133,12 +133,16 @@ export default function onkeydown(event) {
       break;
 
     // backspace
-    case 8:
-      textarea.removeTextAt(tab, cursorPosition);
-      textarea.setCursorAt(cursorPosition - tab.length);
-      event.preventDefault();
-      break;
+    case 8: {
+      const start = cursorPosition - tab.length;
+      const end = cursorPosition;
 
+      if (textarea.getRange(start, end) === tab) {
+        textarea.replaceRangeWith("", start, end);
+        event.preventDefault();
+      }
+      break;
+    }
     default:
   }
 }
