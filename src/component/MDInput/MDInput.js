@@ -4,6 +4,7 @@ import { marked } from "marked";
 import hljs from "highlight.js";
 import "highlight.js/styles/github.css";
 import "./MDInput.css";
+import DOMPurify from "dompurify";
 import RenderIn from "../RenderIn/RenderIn";
 import onkeydown from "./tabSupport";
 
@@ -21,7 +22,9 @@ const markedOptions = {
 marked.setOptions(markedOptions);
 
 function MDInput({ outputElementId, textInput }) {
-  const [insecureHtml, setInsecureHtml] = useState(marked.parse(textInput));
+  const [sanitizedHtml, setSanitizedHtml] = useState(
+    DOMPurify.sanitize(marked.parse(textInput))
+  );
   return (
     <div id="mdi-component">
       <textarea
@@ -32,7 +35,9 @@ function MDInput({ outputElementId, textInput }) {
         autoCorrect="off"
         wrap="soft"
         defaultValue={textInput}
-        onChange={(e) => setInsecureHtml(marked.parse(e.target.value))}
+        onChange={(e) =>
+          setSanitizedHtml(DOMPurify.sanitize(marked.parse(e.target.value)))
+        }
         onKeyDown={onkeydown}
       />
 
@@ -40,7 +45,8 @@ function MDInput({ outputElementId, textInput }) {
         <div
           id="preview"
           data-testid="preview"
-          dangerouslySetInnerHTML={{ __html: insecureHtml }}
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: sanitizedHtml }}
         />
       </RenderIn>
     </div>
