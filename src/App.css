@@ -1,8 +1,41 @@
 :root {
-  /* --border-color: green !important; */
-  /* --border-size: 1vmin !important; */
-  /* --highlight-color: orange !important; */
+  --main-color: #372500;
+  --main-bgr-color: #fce2aa;
+  --secondary-bgr-color: antiquewhite !important;
+  --selection-color: #ff7171 !important;
+  --highlight-color-rgb: 255, 0, 0;
+  /* --highlight-color: rgb(var(--highlight-color-rgb)) !important; */
+  /* --highlight-color: red; */
+  /* --border-size: 1vmin; */
+  /* --font-size: calc(12px + 0.8vmax); */
+  /* --border-stye: 1px solid var(--border-color); */
 }
 
 #mdp-container {
+  color: var(--main-color);
+  background-color: var(--main-bgr-color);
+}
+
+#editor {
+  color: var(--main-color);
+  background-color: var(--secondary-bgr-color);
+}
+
+::selection {
+  background-color: var(--selection-color);
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar {
+  width: 1.5vmin;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: rgba(var(--highlight-color-rgb), 0.2);
 }

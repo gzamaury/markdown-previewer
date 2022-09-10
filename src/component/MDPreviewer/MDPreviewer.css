@@ -1,10 +1,10 @@
 :root {
-  --border-color: red;
+  --highlight-color: red;
   --border-size: 1vmin;
-  --highlight-color: lightblue;
+  --selection-color: #21831b;
   --font-size: calc(12px + 0.8vmax);
-  --border-stye: 1px solid var(--border-color);
-  --background--color: ghostwhite;
+  --border-stye: 1px solid var(--highlight-color);
+  --secondary-bgr-color: ghostwhite;
 }
 
 body {
@@ -20,11 +20,11 @@ body {
   display: flex;
   flex-direction: row;
   height: 100vh;
-  border-top: solid var(--border-color) var(--border-size);
-  border-bottom: solid var(--border-color) var(--border-size);
+  border-top: solid var(--highlight-color) var(--border-size);
+  border-bottom: solid var(--highlight-color) var(--border-size);
   width: 100vw;
-  border-right: solid var(--border-color) var(--border-size);
-  border-left: solid var(--border-color) var(--border-size);
+  border-right: solid var(--highlight-color) var(--border-size);
+  border-left: solid var(--highlight-color) var(--border-size);
 }
 
 .container {
@@ -32,7 +32,7 @@ body {
 }
 
 #md-input {
-  border-right: solid var(--border-color) calc(var(--border-size) / 2);
+  border-right: solid var(--highlight-color) calc(var(--border-size) / 2);
 }
 
 #md-input #editor {
@@ -40,7 +40,7 @@ body {
 }
 
 #md-preview {
-  border-left: solid var(--border-color) calc(var(--border-size) / 2);
+  border-left: solid var(--highlight-color) calc(var(--border-size) / 2);
   overflow: auto;
 }
 
@@ -52,7 +52,7 @@ h5,
 h6 {
   margin-block-start: 0.4em;
   margin-block-end: 0.2em;
-  border-bottom: solid var(--border-color) 1px;
+  border-bottom: solid var(--highlight-color) 1px;
 }
 
 table {
@@ -95,7 +95,7 @@ blockquote p {
   margin: 0;
   padding: 1vmin 2vmin 1vmin 3vmin;
   display: inline-block;
-  background: var(--background--color);
+  background: var(--secondary-bgr-color);
 }
 
 blockquote p::before {
@@ -107,17 +107,17 @@ blockquote p::before {
 }
 
 code {
-  background: var(--background--color);
+  background: var(--secondary-bgr-color);
   padding: 0.5vmin;
 }
 
 pre code.hljs {
   padding: 1vmin 2vmin 1vmin 2vmin;
-  background: var(--background--color);
+  background: var(--secondary-bgr-color);
 }
 
 a {
-  color: var(--border-color);
+  color: var(--highlight-color);
 }
 
 p img {
@@ -141,7 +141,7 @@ ul ol {
 }
 
 ul li::marker {
-  color: var(--border-color);
+  color: var(--highlight-color);
 }
 
 input[type="checkbox"] {
@@ -153,13 +153,13 @@ input[type="checkbox"] {
 
 @media only screen and (orientation: portrait) {
   #md-input {
-    border-right: solid var(--border-color) 0;
-    border-bottom: solid var(--border-color) calc(var(--border-size) / 2);
+    border-right: solid var(--highlight-color) 0;
+    border-bottom: solid var(--highlight-color) calc(var(--border-size) / 2);
   }
 
   #md-preview {
-    border-left: solid var(--border-color) 0;
-    border-top: solid var(--border-color) calc(var(--border-size) / 2);
+    border-left: solid var(--highlight-color) 0;
+    border-top: solid var(--highlight-color) calc(var(--border-size) / 2);
   }
   #mdp-component {
     flex-direction: column;

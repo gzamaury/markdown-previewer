@@ -10,7 +10,7 @@
   padding: 0.5vmin;
   height: 100%;
   width: 100%;
-  outline-color: var(--highlight-color);
+  outline-color: var(--main-color);
 }
 
 #preview {

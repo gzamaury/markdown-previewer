@@ -139,8 +139,8 @@ To order your list, precede each line with a number.
 You can create a nested list by indenting one or more list items below another item.
 
   1. First list item
-    - First nested list item
-      - Second nested list item
+     - First nested list item
+       - Second nested list item
 
 ## Task lists
 
