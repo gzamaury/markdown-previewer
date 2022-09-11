@@ -69,8 +69,8 @@ HTMLTextAreaElement.prototype.tabulateSelection = function tabulateSelection() {
   );
 };
 
-HTMLTextAreaElement.prototype.unTabulateSelection =
-  function unTabulateSelection() {
+HTMLTextAreaElement.prototype.untabulateSelection =
+  function untabulateSelection() {
     const unTabbedSelection = this.getSelection()
       .split("\n")
       .map((s) =>
@@ -116,7 +116,7 @@ export default function onkeydown(event) {
       if (textarea.hasSelection()) {
         // has selection and shift pressed
         if (shiftPressed) {
-          textarea.unTabulateSelection();
+          textarea.untabulateSelection();
           textarea.removeTextAtSelection(tab);
           // has selection and shift not pressed
         } else {
