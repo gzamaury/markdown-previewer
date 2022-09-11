@@ -39,5 +39,5 @@
   "start_url": ".",
   "display": "standalone",
   "theme_color": "red",
-  "background_color": "red"
+  "background_color": "#fce2aa"
 }
