@@ -90,9 +90,9 @@ Text that is not a quote
 
 ## Quoting code
 
-You can call out code or a command within a sentence with single backticks (\`\`\`\` \` \`\`\`\`), e.g. the \`console.log()\` method outputs a message to the web console.
+You can call out code or a command within a sentence with single backticks \`\`\`\` \` \`\`\`\`, e.g. the \`console.log()\` method outputs a message to the web console.
 
-To format code or text into its own distinct block, use triple backticks (\`\`\`\` \`\`\` \`\`\`\`).
+To format code or text into its own distinct block, use triple backticks \`\`\`\` \`\`\` \`\`\`\`.
 
 \`\`\`js
   // JS - destructuring assignment
@@ -114,7 +114,7 @@ These examples are based on [Basic writing and formatting syntax](https://docs.g
 
 ## Images
 
-You can display an image by adding \`!\` and wrapping the alt text in \`[ ]\`. Then wrap the link for the image in parentheses \`()\`.
+You can display an image by adding \`!\` and wrapping the alt text in \`[ ]\`. Then wrap the link for the image in parentheses \`( )\`.
 
 ![This is an image](https://myoctocat.com/assets/images/base-octocat.svg)
 
