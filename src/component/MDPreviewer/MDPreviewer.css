@@ -128,7 +128,7 @@ p img {
 
 ol,
 ul {
-  padding-left: 0;
+  padding-left: 3vmin;
   margin-left: 6vmin;
 }
 
